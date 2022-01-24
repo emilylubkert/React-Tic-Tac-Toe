@@ -1,0 +1,51 @@
+body {
+  background-color: #f5e6cc;
+}
+
+button {
+  background-color: #17e9e0;
+  border: 6px solid #fccd04;
+  border-radius: 10px;
+}
+.game-board {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #a64ac9;
+  color: rgb(204, 28, 28);
+  border: 6px solid #0b0d0f;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.grid-row {
+  border: 6px solid #ffb48f;
+  border-radius: 6px;
+  font-size: 4em;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgb(175, 70, 70);
+}
+
+#status-bar {
+  color: white;
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 400;
+}
+
+.square-button {
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 700;
+}
+
+#title {
+  font-family: 'Roboto', sans-serif;
+  padding: 8px;
+}
+
+.game {
+  text-align: center;
+}
