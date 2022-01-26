@@ -2,21 +2,20 @@ import { useState } from "react";
 import Square from "./Square";
 
 function Board() {
-  // 1st player is 1
-  // State keeps track of next player
   const [player, setPlayer] = useState(1);
-  const [state, setState] = useState(Array(9).fill(null)); //overall state of game - as things are clicked, add to array
+  const [state, setState] = useState(Array(9).fill(null)); 
 
   let turn;
-  player == 1 ? turn = `X's turn` : turn = `O's turn`
+  player === 1 ? turn = `X's turn` : turn = `O's turn`
   let winner = checkWinner(state);
   console.log(state);
-  if (winner && winner != "draw") {
-    winner == 1 ? turn = `X wins!` : turn = `O wins!`;
-  } else if (winner && winner === "draw") {
-    turn = `It's a ${turn}`;
+  console.log(winner);
+  if (winner!== null && winner !== "draw") {
+    winner === 0 ? turn = `O wins!` : turn = `X wins!`;
+  } else if (winner === "draw") {
+    turn = `It's a ${winner}`;
   } else {
-    player == 1 ? turn = `X's turn` : turn = `O's turn`
+    player === 1 ? turn = `X's turn` : turn = `O's turn`
   }
 
   // define newState function
@@ -42,8 +41,7 @@ function Board() {
     ];
     for (let i = 0; i < win.length; i++) {
       const [a, b, c] = win[i];
-      if (state[a] === state[b] && state[a] === state[c] && state[a]) {
-        console.log(`${state[a]}`);
+      if (state[a] === state[b] && state[a] === state[c] && state[a] !== null) {
         return state[a];
       } else if (!state.includes(null)) {
         return "draw";
@@ -54,7 +52,7 @@ function Board() {
 
   function renderSquare(i) {
     // use properties to pass callback function takeTurn and id to Child
-    return <Square id={i} player={player} newState={newState}></Square>;
+    return <Square id={i} newState={newState}></Square>;
   }
   return (
     <div className="game-board">
