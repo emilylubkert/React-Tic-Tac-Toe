@@ -2,6 +2,7 @@
 
 ## Description
 This is a simple tic tac toe game built with React using Create React App. A message shows whose turn it is, and users can click their chosen square to mark X or O when it's their turn.
+A GitHub pages example was added to practice CI/CD.
 
 ## How to Run
 You can play the game at https://emilylubkert.github.io/React-Tic-Tac-Toe/ .
